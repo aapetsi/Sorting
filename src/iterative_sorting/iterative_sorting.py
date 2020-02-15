@@ -11,17 +11,18 @@ def check_sorted(arr):
 
 
 def selection_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    is_sorted = check_sorted(arr)
+    arr_cp = arr[:]
+    if len(arr_cp) <= 1:
+        return arr_cp
+    is_sorted = check_sorted(arr_cp)
     ret = []
-    while len(arr) != 0:
-        for idx, val in enumerate(arr):
-            min_val = min(arr[0:])
-            min_index = arr.index(min_val)
+    while len(arr_cp) != 0:
+        for idx, val in enumerate(arr_cp):
+            min_val = min(arr_cp[0:])
+            min_index = arr_cp.index(min_val)
             ret.append(min_val)
-            arr.pop(min_index)
-        is_sorted = check_sorted(arr)
+            arr_cp.pop(min_index)
+        is_sorted = check_sorted(arr_cp)
     return ret
 
 # TO-DO:  implement the Bubble Sort function below
@@ -41,8 +42,6 @@ def bubble_sort(arr):
                     arr[index + 1] = first
         is_sorted = check_sorted(arr)
     return arr
-
-
 
 
 # STRETCH: implement the Count Sort function below
