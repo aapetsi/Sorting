@@ -29,22 +29,22 @@ def selection_sort(arr):
 
 
 def bubble_sort(arr):
-    if len(arr) <= 1:
+    arr_len = len(arr)
+    if arr_len <= 1:
         return arr
-    is_sorted = check_sorted(arr)
-    while not is_sorted:
-        for index, num in enumerate(arr):
-            if index != len(arr) - 1:
-                first = num
-                second = arr[index + 1]
-                if first > second:
-                    arr[index] = second
-                    arr[index + 1] = first
-        is_sorted = check_sorted(arr)
+    for i in range(arr_len):
+        for j in range(arr_len - 1):
+            if arr[j] > arr[j + 1]:
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
     return arr
 
-
 # STRETCH: implement the Count Sort function below
+
+
+def insertion_sort(arr):
+    pass
 
 
 def count_sort(arr, maximum=-1):
