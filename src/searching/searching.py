@@ -92,4 +92,3 @@ def interpolation_search(arr, target):
 
 def nearest_mid(arr, target, low, high):
     return low + ((high - low) // (arr[high] - arr[low])) * (target - arr[low])
-
